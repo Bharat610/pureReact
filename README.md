@@ -29,6 +29,7 @@
   - navigate to cd api and install dependency `npm install`
   - naivagte to cd client and install dependency `npm install`
   - create a .env file in the api folder with the following variables:
+
     ```bash
     MONGO_URL: your_mongo_db_connection_string
     ACCESS_SECRET_TOKEN: your_jwt_authorization_secret_token
@@ -41,5 +42,6 @@
     CLOUDINARY_API_KEY: your_cloudinary_api_key
     CLOUDINARY_API_SECRET: your_cloudinary_api_secret
     ```
-    - Start the backend server `npm run start`
-    - Start the frontend development server `npm run dev`
+
+  - Start the backend server `npm run start`
+  - Start the frontend development server `npm run dev`
