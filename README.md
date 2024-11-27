@@ -13,14 +13,15 @@ PureReact is a social content-sharing platform built for React developers. It al
 ### Post Management
 - **Create, Edit, and Delete Posts**: Create post with **rich text editor**, add cover image, add category to post, ability to edit and delete existing post from user page.
 - **Likes, Comments and Filter**: user can like and comment on other posts, filter posts based on popularity and recency.
-- **Category Page**: Organize posts into relevant categories access posts on specific react topic on category page.
+- **Category Page**: Browse posts grouped under specific React topics.
 - **Reading List**: Save posts to your **Reading List** and revisit them later through your profile.
 
 
 ## Tech Stack 🛠️
-- **Frontend**: React.js and TailwindCSS.
+- **Frontend**: React.js (with TailwindCSS for styling).
 - **Backend**: Node.js and Express.js for API handling.
-- **Database**: MongoDB for storing user data and posts, **Cloudinary**: for storing and delivering images.
+- **Database**: MongoDB for storing user data and posts.
+- **Image Management**: Cloudinary for storing and delivering images.
 - **Authentication**: JWT-based user authorization with email verification for secure login.
 
 
@@ -28,8 +29,8 @@ PureReact is a social content-sharing platform built for React developers. It al
 
 ### Installation
   - Clone the repository: `git clone https://github.com/Bharat610/purereact.git`
-  - navigate to cd api and install dependency `npm install`
-  - naivagte to cd client and install dependency `npm install`
+  - Navigate to `cd api` and install dependencies: `npm install`
+  - Navigate to `cd client` and install dependencies: `npm install`
   - create a .env file in the api folder with the following variables:
 
     ```bash
