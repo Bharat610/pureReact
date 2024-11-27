@@ -1,4 +1,6 @@
-# PureReact - A social network for React developers
+# PureReact - The Developer Hub for All Things React
+
+PureReact is a social content-sharing platform built for React developers. It allows users to create and manage posts efficiently. With secure authentication, post categorization, and reading list features, PureReact makes managing and discovering content straightforward and enjoyable.
 
 
 ## Features 🚀
