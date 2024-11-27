@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* *{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+  */
+ body{
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  background-color: rgb(245,245,245);
+} 
+.ql-editor p {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.ql-editor.ql-blank::before{
+  font-size: 1.1rem !important;
+}
+.ql-editor h2{
+  font-size: 1.5rem !important;
+  font-weight: 600;
+}
+.ql-editor h3{
+  font-size: 1.3rem !important;
+  font-weight: 600;
+}
+.ql-editor h4{
+  font-size: 1.2rem !important;
+  font-weight: 600;
+}
+.ql-editor ul li{
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.ql-editor ol li{
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+
+/********************************/
+.text-editor p{
+  color: #000;
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+@media screen and (max-width:748px) {
+  .text-editor p{
+    color: #000;
+    font-size: 1.125rem;
+    line-height: 2rem;
+  }
+  .text-editor pre{
+    padding: 15px !important;
+  }
+}
+.text-editor h2{
+  font-size: 1.5rem !important;
+  font-weight: 600;
+}
+.text-editor h3{
+  font-size: 1.3rem !important;
+  font-weight: 600;
+}
+.text-editor h4{
+  font-size: 1.2rem !important;
+  font-weight: 600;
+}
+.text-editor ul li{
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.text-editor ol li{
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.text-editor ul{
+  list-style-type: disc;
+  padding-left: 40px;
+}
+.text-editor ol{
+  list-style-type: decimal;
+  padding-left: 40px;
+}
+.text-editor pre{
+  padding: 25px;
+  font-size: 1rem;
+  border-radius: 10px;
+  margin-bottom:15px;
+  background-color: #000;
+  color:#fff;
+}
+.text-editor img{
+  width:100%;
+  object-fit: contain;
+  margin: 15px 0;
+}
