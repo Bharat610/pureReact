@@ -68,7 +68,7 @@ router.post("/register", async (req, res) => {
             html: `
             <h1>Welcome to Pure React</h1>
             <p>Please verify your email by clicking the link below:</p>
-            <a href="http://localhost:5173/verify-email?token=${verificationToken}">Verify Email</a>
+            <a href="https://purereact.netlify.app/verify-email?token=${verificationToken}">Verify Email</a>
             `
         };
         
@@ -200,7 +200,7 @@ router.post('/reset-link', async(req, res) => {
             subject: "Reset your password",
             html: `
             <p>You can reset your password by clicking on the link below:</p>
-            <a href="http://localhost:5173/password-reset?token=${verificationToken}">Change Password</a>
+            <a href="https://purereact.netlify.app/password-reset?token=${verificationToken}">Change Password</a>
             <p>If you didn't request this, please ignore this email.</p>
             `
         };
