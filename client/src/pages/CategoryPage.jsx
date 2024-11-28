@@ -14,7 +14,7 @@ export default function CategoryPage() {
   
   async function getCategoryData() {
     const fetchCategory = await fetch(
-      "/api/categories/single/?name=" + searchparams.get("name")
+      "https://purereact-api.onrender.com/api/categories/single/?name=" + searchparams.get("name")
     );
     if (fetchCategory.status === 404) {
       setError("Category does not exist!");
@@ -29,7 +29,7 @@ export default function CategoryPage() {
 
   async function getCategoryPosts() {
     try {
-      const getPosts = await fetch("/api/posts/" + location.search);
+      const getPosts = await fetch("https://purereact-api.onrender.com/api/posts/" + location.search);
       if (getPosts.status === 404) {
         setError("No posts found for the specified category!");
         return;
@@ -52,12 +52,6 @@ export default function CategoryPage() {
     getCategoryData();
     getCategoryPosts();
   }, [searchparams]);
-
-  //   if(error){
-  //     return (
-
-  //     )
-  //   }
 
   return (
     <>

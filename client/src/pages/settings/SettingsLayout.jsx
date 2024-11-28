@@ -31,7 +31,7 @@ export default function SettingsLayout() {
     formData.append("file", updateUser.profilePic);
 
     try {
-      const imageData = await fetch("/api/upload", {
+      const imageData = await fetch("https://purereact-api.onrender.com/api/upload", {
         method: "POST",
         body: formData,
       });
@@ -55,7 +55,7 @@ export default function SettingsLayout() {
       payload: user,
     });
     try {
-      const updater = await fetch("/api/users/" + user._id, {
+      const updater = await fetch("https://purereact-api.onrender.com/api/users/" + user._id, {
         method: "PUT",
         body: JSON.stringify({
           userId: user._id,

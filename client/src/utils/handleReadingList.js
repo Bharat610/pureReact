@@ -14,7 +14,7 @@ export function useHandleReadingList() {
         navigate("/login");
         return;
       }
-      const readingListUpdate = await fetch("/api/users/" + user._id, {
+      const readingListUpdate = await fetch("https://purereact-api.onrender.com/api/users/" + user._id, {
         method: "PUT",
         body: JSON.stringify({
           userId: user._id,

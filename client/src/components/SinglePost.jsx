@@ -12,7 +12,7 @@ export default function SinglePost() {
   const {user} = useContext(Context)
 
   async function getSinglePost() {
-    const fetchSinglePost = await fetch(`/api/posts/${params.postId}`)
+    const fetchSinglePost = await fetch(`https://purereact-api.onrender.com/api/posts/${params.postId}`)
     const res = await fetchSinglePost.json()
     setSinglePost(res)
   }
@@ -23,7 +23,7 @@ export default function SinglePost() {
 
   async function handleDelete() {
     try{
-    const postDelete = await fetch(`/api/posts/${singePost._id}`, {
+    const postDelete = await fetch(`https://purereact-api.onrender.com/api/posts/${singePost._id}`, {
       method: "DELETE",
       headers: {
         'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ export default function SinglePost() {
     <div className="singlePost">
       <img
         className="singlePostImg"
-        src={`http://localhost:5000/images/${singePost.photo}`}
+        src={singePost.photo}
         alt=""
         />
       <div className="titleContainer">

@@ -17,7 +17,7 @@ export default function ForgotPassword() {
     setLoading(true)
 
     try{
-        const fetchData = await fetch("/api/auth/reset-link", {
+        const fetchData = await fetch("https://purereact-api.onrender.com/api/auth/reset-link", {
             method: "POST",
             body: JSON.stringify({
                 email: email,

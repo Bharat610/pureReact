@@ -36,11 +36,11 @@ export default function Single() {
   //fetching post data
   async function getSinglePost() {
     try {
-      const fetchSinglePost = await fetch(`/api/posts/${params.postId}`);
+      const fetchSinglePost = await fetch(`https://purereact-api.onrender.com/api/posts/${params.postId}`);
       if (fetchSinglePost.status === 404) {
         return navigate("/404");
       } else if (!fetchSinglePost.ok) {
-        return <h2>Something went wrong</h2>;
+        return <h2>Something went wrong: {fetchSinglePost.statusText}</h2>;
       }
       const res = await fetchSinglePost.json();
       await fetchPostUser(res.userDetails.userName);
@@ -53,9 +53,9 @@ export default function Single() {
   //post user info
   async function fetchPostUser(username) {
     try {
-      const getUser = await fetch("/api/users/" + username);
+      const getUser = await fetch("https://purereact-api.onrender.com/api/users/" + username);
       if (!getUser.ok) {
-        return <h2>Something went wrong</h2>;
+        return <h2>Something went wrong: {getUser.statusText}</h2>;
       }
       const res = await getUser.json();
       setPostUser(res);
@@ -74,7 +74,7 @@ export default function Single() {
         alert("you need to login to like the post");
         return;
       }
-      const likes = await fetch("/api/posts/reactions/" + params.postId, {
+      const likes = await fetch("https://purereact-api.onrender.com/api/posts/reactions/" + params.postId, {
         method: "PUT",
         body: JSON.stringify({
           userId: user._id,
@@ -99,7 +99,7 @@ export default function Single() {
   async function relatedPosts() {
     try {
       const fetchRelatedPosts = await fetch(
-        `/api/posts/related/categories/${singlePost._id}/?categories=${singlePost.categories.toString()}`
+        `https://purereact-api.onrender.com/api/posts/related/categories/${singlePost._id}/?categories=${singlePost.categories.toString()}`
       );
       const res = await fetchRelatedPosts.json();
       setRelatedPost(res);
@@ -138,15 +138,15 @@ export default function Single() {
                 className="w-full h-50 lg:h-80 object-cover rounded-t-md"
                 // src={`http://localhost:5000/images/${singlePost.photo}`}
                 src={singlePost.photo}
-                alt=""
+                alt="featured image"
                 />
               }
                 <div className="p-5 lg:p-10 bg-white border border-gray-200 flex flex-col gap-5">
                   <div className="flex justify-between">
                     <div className="flex items-center gap-2">
                       <img
-                        src={`http://localhost:5000/images/${singlePost.userDetails.userPhoto}`}
-                        alt=""
+                        src={singlePost.userDetails.userPhoto}
+                        alt="user photo"
                         className="w-11 h-11 rounded-full object-cover"
                       />
                       <div className="flex flex-col">

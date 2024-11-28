@@ -10,7 +10,7 @@ export default function EmailVerification() {
     // const [text, setText] = React.useState("")
 
     async function getVerified() {
-        const emailVerify = await fetch("/api/auth/verify-email?token=" + params.get("token"));
+        const emailVerify = await fetch("https://purereact-api.onrender.com/api/auth/verify-email?token=" + params.get("token"));
         console.log(emailVerify)
         if(!emailVerify.ok) {
             const res = await emailVerify.json()

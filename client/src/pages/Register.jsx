@@ -32,7 +32,7 @@ export default function Register() {
 
     setLoading(true);
 
-    const fetchData = await fetch("/api/auth/register", {
+    const fetchData = await fetch("https://purereact-api.onrender.com/api/auth/register", {
       method: "POST",
       body: JSON.stringify({
         name: userDetails.name,

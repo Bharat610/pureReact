@@ -38,7 +38,7 @@ export default function UserSingle() {
   async function fetchUser() {
     try {
       setLoading(true);
-      const getUser = await fetch("/api/users/" + params.username);
+      const getUser = await fetch("https://purereact-api.onrender.com/api/users/" + params.username);
       if (!getUser.ok) {
         if (getUser.status === 404) {
           return navigate("/404");
@@ -55,7 +55,7 @@ export default function UserSingle() {
 
   async function fetchUserPost() {
     try {
-      const userPosts = await fetch(`/api/posts?userName=${params.username}`);
+      const userPosts = await fetch(`https://purereact-api.onrender.com/api/posts?userName=${params.username}`);
       if (userPosts.status === 404) {
         setUserPosts([]);
         return;
@@ -289,10 +289,9 @@ export default function UserSingle() {
                     <div className="flex items-center gap-2">
                       <img
                         src={
-                          "http://localhost:5000/images/" +
                           post.userDetails.userPhoto
                         }
-                        alt=""
+                        alt="user photo"
                         className="w-9 h-9 rounded-full object-cover"
                       />
                       <div className="flex flex-col">

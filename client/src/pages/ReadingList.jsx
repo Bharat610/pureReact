@@ -16,10 +16,11 @@ export default function ReadingList() {
     try {
       setLoading(true);
       const fetchReadingList = await fetch(
-        "/api/posts/readinglist/?id=" + user._id
+        "https://purereact-api.onrender.com/api/posts/readinglist/?id=" + user._id
       );
       if (!fetchReadingList.ok) {
         console.log(fetchReadingList);
+        setLoading(false)
         return;
       }
       const res = await fetchReadingList.json();
@@ -43,13 +44,8 @@ export default function ReadingList() {
           <h1 className="text-2xl text-black font-semibold">
             Reading List ({user.readingList.length})
           </h1>
-            {loading ? (
-              <h2 className="text-lg text-black">Loading...</h2>
-            ) : readingPost.length !== 0 ? 
-            <Posts post={readingPost} />
-            // (
-            //   readingPost.map((post) => <Post key={post._id} post={post} isBookmarked={user?.readingList.includes(post._id)} />)
-            // )
+           {readingPost.length !== 0 ? 
+            <Posts post={readingPost} isLoading={loading} />
              : (
               <p className="text-lg font-semibold text-gray-600">
                 Your reading list is empty.

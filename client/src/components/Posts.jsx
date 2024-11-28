@@ -8,7 +8,6 @@ import LoadingSkeleton from "./LoadingSkeleton.jsx";
 
 export default function Posts({ post, isLoading, error, getPosts }) {
   const { user } = useContext(Context);
-  const arr = [5];
 
   const postLoop = post.map((post) => {
     return (

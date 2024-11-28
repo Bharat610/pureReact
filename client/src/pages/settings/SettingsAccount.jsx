@@ -29,7 +29,7 @@ export default function SettingsAccount() {
       type: "UPDATE_START",
     });
     try {
-      const updatePassword = await fetch("/api/users/" + user._id, {
+      const updatePassword = await fetch("https://purereact-api.onrender.com/api/users/" + user._id, {
         method: "PUT",
         body: JSON.stringify({
           userId: user._id,
@@ -73,7 +73,7 @@ export default function SettingsAccount() {
   //Delete user
   async function handleUserDelete() {
     try{
-      const deleteUser = await fetch("/api/users/"+user._id, {
+      const deleteUser = await fetch("https://purereact-api.onrender.com/api/users/"+user._id, {
         method: "DELETE",
         body: JSON.stringify({userId: user._id}),
         headers: {

@@ -15,7 +15,7 @@ export default function SearchPage() {
 console.log(params.toString())
   async function searchResults() {
     try {
-      const searchPost = await fetch(`/api/posts/?page=${1}/?search=${params.get("q")}`);
+      const searchPost = await fetch(`https://purereact-api.onrender.com/api/posts/?page=${1}/?search=${params.get("q")}`);
       if (searchPost.status === 404) {
         setQpPost([]);
         return 

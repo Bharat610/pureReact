@@ -25,7 +25,7 @@ export default function PasswordReset() {
     }
 
     const passwordReset = await fetch(
-      "/api/auth/password-reset?token=" + params.get("token"),
+      "https://purereact-api.onrender.com/api/auth/password-reset?token=" + params.get("token"),
       {
         method: "PUT",
         body: JSON.stringify({

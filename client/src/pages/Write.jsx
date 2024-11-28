@@ -39,7 +39,7 @@ export default function Write() {
       formData.append("file", uploadData.photo);
 
       try {
-        const imageData = await fetch("/api/upload", {
+        const imageData = await fetch("https://purereact-api.onrender.com/api/upload", {
           method: "POST",
           body: formData,
         });
@@ -62,7 +62,7 @@ export default function Write() {
 
   async function getCategories() {
     try {
-      const getData = await fetch("/api/categories");
+      const getData = await fetch("https://purereact-api.onrender.com/api/categories");
       if (!getData.ok) {
         setError("Failed to fetch categories: " + getData.statusText);
       }
@@ -84,7 +84,7 @@ export default function Write() {
       setLoading(true);
       try {
         const { userDetails, ...otherData } = uploadData;
-        const updatePost = await fetch("/api/posts/" + state._id, {
+        const updatePost = await fetch("https://purereact-api.onrender.com/api/posts/" + state._id, {
           method: "PUT",
           body: JSON.stringify({
             ...otherData,
@@ -110,7 +110,7 @@ export default function Write() {
     } else {
       setLoading(true);
       try {
-        const newPost = await fetch("/api/posts", {
+        const newPost = await fetch("https://purereact-api.onrender.com/api/posts", {
           method: "POST",
           body: JSON.stringify({
             ...uploadData,

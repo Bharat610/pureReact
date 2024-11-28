@@ -136,7 +136,7 @@ export default function SettingsProfile() {
           <input
             type="url"
             id="githubURL"
-            placeholder="https://yourswebsite.com"
+            placeholder="https://github.com/username"
             name="githubURL"
             value={updateUser.githubURL}
             onChange={(e) =>
@@ -153,7 +153,7 @@ export default function SettingsProfile() {
           <input
             type="url"
             id="linkedinURL"
-            placeholder="https://yourswebsite.com"
+            placeholder="https://www.linkedin.com/username"
             name="linkedinURL"
             value={updateUser.linkedinURL}
             onChange={(e) =>
@@ -173,7 +173,7 @@ export default function SettingsProfile() {
           <input
             type="url"
             id="xURL"
-            placeholder="https://yourswebsite.com"
+            placeholder="https://x.com/username"
             name="xURL"
             value={updateUser.xURL}
             onChange={(e) =>

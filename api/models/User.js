@@ -28,7 +28,7 @@ const userSchema = new mongoose.Schema({
     verificationToken: {type: String},
     profilePicture: {
         type: String,
-        default: "userDefault.png"
+        default: "https://res.cloudinary.com/dmcksyahd/image/upload/v1732797818/userDefault_lzomao.png"
     },
     readingList: {
         type: Array,

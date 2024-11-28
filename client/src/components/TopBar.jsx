@@ -42,7 +42,7 @@ export default function TopBar() {
         setPostQuery([]);
         return;
       }
-      const fetchResults = await fetch("/api/posts/?search=" + query);
+      const fetchResults = await fetch("https://purereact-api.onrender.com/api/posts/?search=" + query);
       if (fetchResults.status === 404) {
         setPostQuery([]);
         return;
@@ -164,7 +164,7 @@ export default function TopBar() {
         >
           <Link to="/">
             <img
-              src="/src/assets/pureReact.png"
+              src="https://res.cloudinary.com/dmcksyahd/image/upload/v1732798027/pureReact_c3udvm.png"
               className="w-20"
               alt="PureReact logo"
             />

@@ -12,7 +12,7 @@ export default function PostComment({ post }) {
   async function handleComment(e) {
     e.preventDefault();
     try {
-      const postComment = await fetch("/api/posts/comments/" + post._id, {
+      const postComment = await fetch("`https://purereact-api.onrender.com/api/posts/comments/" + post._id, {
         method: "PUT",
         body: JSON.stringify({
           userId: user._id,
@@ -76,9 +76,10 @@ export default function PostComment({ post }) {
       <form onSubmit={handleComment}>
         <div className="flex gap-4 mt-2.5">
           <img
-            src={`http://localhost:5000/images/${
-              user ? user.profilePicture : "userDefault.png"
-            }`}
+          src={user.profilePicture}
+            // src={`http://localhost:5000/images/${
+            //   user ? user.profilePicture : "userDefault.png"
+            // }`}
             alt="user profile picture"
             className="w-11 h-11 rounded-full object-cover"
           />
@@ -109,7 +110,7 @@ export default function PostComment({ post }) {
             <div key={text.userId} className="flex gap-4 items-start">
               <Link to={"/" + text.userName}>
                 <img
-                  src={`http://localhost:5000/images/${text.userProfile}`}
+                  src={text.userProfile}
                   alt="user profile picture"
                   className="w-9 h-9 rounded-full object-cover"
                 />

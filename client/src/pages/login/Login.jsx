@@ -15,7 +15,7 @@ export default function Login() {
       type: "LOGIN_START",
     });
 
-    const loginData = await fetch("/api/auth/login", {
+    const loginData = await fetch("https://purereact-api.onrender.com/api/auth/login", {
       method: "POST",
       body: JSON.stringify({
         userName: e.target.user.value,
