@@ -6,7 +6,7 @@ export default function Sidebar() {
   const [categories, setCategories] = React.useState([]);
 
   async function getCategories() {
-    const fetchCategories = await fetch("/api/categories");
+    const fetchCategories = await fetch("https://purereact-api.onrender.com/api/categories");
     const res = await fetchCategories.json();
     setCategories(res);
   }

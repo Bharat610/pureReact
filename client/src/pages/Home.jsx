@@ -27,7 +27,7 @@ export default function Home() {
     try {
       setLoading(true);
       const fetchPost = await fetch(
-        `/api/posts/?page=${page}${
+        `https://purereact-api.onrender.com/api/posts/?page=${page}${
           searchParams.has("sort") ? "&sort=" + searchParams.get("sort") : ""
         }`
       );
