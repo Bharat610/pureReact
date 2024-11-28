@@ -13,8 +13,8 @@ const cloudinary = require('cloudinary').v2;
 const user = require("./models/User")
 const Posts = require("./models/Post")
 
-// const cors = require('cors');
-// app.use(cors());
+const cors = require('cors');
+app.use(cors());
 
 dotenv.config();
 // app.use(express.json());
