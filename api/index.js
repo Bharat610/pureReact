@@ -25,7 +25,7 @@ app.use("/images", express.static(path.join(__dirname, "/images")))
 main().catch(err => console.log(err));
 async function main() {
     await mongoose.connect(process.env.MONGO_URL);
-    console.log("don't know shit thats going on here");
+    console.log(" mongoDB connected");
   }
 
   // const storage = multer.diskStorage({
