@@ -53,12 +53,6 @@ export default function CategoryPage() {
     getCategoryPosts();
   }, [searchparams]);
 
-  //   if(error){
-  //     return (
-
-  //     )
-  //   }
-
   return (
     <>
       <TopBar />

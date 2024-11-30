@@ -108,11 +108,6 @@ export default function Single() {
     }
   }
 
-  //only run the related Post code after the single post data has loaded
-  // if (!relatedPost && singlePost) {
-  //   relatedPosts();
-  // }
-
 
   React.useEffect(() => {
       getSinglePost();

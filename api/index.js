@@ -25,21 +25,8 @@ app.use("/images", express.static(path.join(__dirname, "/images")))
 main().catch(err => console.log(err));
 async function main() {
     await mongoose.connect(process.env.MONGO_URL);
-    console.log("don't know shit thats going on here");
+    console.log("MongoDB Connected");
   }
-
-  // const storage = multer.diskStorage({
-  //   destination: (req, file, cb) => {
-  //     cb(null, "images")
-  //   },filename: (req,file, cb) => {
-  //     cb(null, req.body.name)
-  //   }
-  // })
-
-  // const upload = multer({storage: storage})
-  // app.post("/api/upload", upload.single("file"), (req,res) => {
-  //   res.status(200).json("File has been uploaded")
-  // })
 
 
   //cloudinary config
@@ -74,44 +61,6 @@ async function main() {
   }
 })
 
-  // async function cloudUpload() {
-  //   const uploadResult = await cloudinary.uploader
-  //      .upload(
-  //          './images/1728200571875two-lamb-gyros-with-feta-cheese-tzatziki-sauce.jpg', {
-  //           asset_folder: 'pureReact-folder',
-  //          }
-  //      )
-  //      .catch((error) => {
-  //          console.log(error);
-  //      });
-    
-  //   console.log(uploadResult);
-  // } 
-  // cloudUpload()
-
-
-
-//   // Folder containing existing images
-// const imageFolder = path.join(__dirname, './images'); 
-
-// // Get all image files from the folder
-// const files = fs.readdirSync(imageFolder);
-
-// files.forEach(async (file) => {
-//   if (/\.(png|jpg|jpeg|gif)$/i.test(file)) { 
-//     const filePath = path.join(imageFolder, file);
-//     console.log(`Uploading: ${filePath}`);
-
-//     try {
-//       const result = await cloudinary.uploader.upload(filePath);
-//       console.log(`Uploaded: ${result.secure_url}`);
-//     } catch (err) {
-//       console.error(`Failed to upload ${file}:`, err);
-//     }
-
-//   }
-// });
-
 
 app.use("/api/auth", router)
 app.use("/api/users", userRoute)
@@ -121,75 +70,6 @@ app.use("/api/categories", categoryRoute)
 app.listen("5000", () => {
     console.log("backend is running awesome")
 })
-
-
-
-
-// async function updateUserSchema() {
-//   try{
-//     const res = await user.updateMany({name: {$exists: false}}, {$set: {name: ""}})
-//   }catch(err){
-//     console.log(err.message)
-//   }
-// }
-
-// async function updateUserPhoto() {
-//   try{
-//     const res = await user.updateMany({profilePicture: {$eq: ""}}, {$set: {profilePicture: "userDefault.png"}})
-//   }catch(err){
-//     console.log(err)
-//   }
-// }
-
-// async function postDelete() {
-//   try{
-//     const res = await posts.deleteMany({})
-//   }catch(err){
-//     console.log(err)
-//   }
-// }
-
-
-// async function postLikes() {
-//   try{
-//     const posts = await Posts.updateMany({}, {$set: {likes: []}})
-//   }catch(err){
-//     console.log(err.message)
-//   }
-// }
-
-// postLikes();
-
-
-// async function updateLikesCount() {
-//   try {
-//     const posts = await Posts.find(); 
-//     const updates = posts.map(post => 
-//       Posts.updateOne(
-//         { _id: post._id },
-//         { $set: { likesCount: post.likes.length } } 
-//       )
-//     );
-//     await Promise.all(updates); 
-//     console.log("Likes count updated successfully");
-//   } catch (err) {
-//     console.log(err.message);
-//   }
-// }
-
-// updateLikesCount();
-
-// async function postComments() {
-//   try{
-//     const posts = await Posts.updateMany({}, {$set: {comments: []}})
-//   }catch(err) {
-//     console.log(err.message)
-//   }
-// }
-
-// postComments();
-
-// postDelete();
 
 
 
